@@ -36,7 +36,7 @@
     transition: all ease 1s;
 }
 
-.fa-bars:hover {
+.fa-bars:hover, .fa-bars:focus {
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.2);
@@ -64,7 +64,7 @@
         @include m-l-a;
     }
     a:last-child { border-bottom: none; }
-    a:hover { background-color : rgba($color: $nude, $alpha: .6); }
+    a:hover, a:focus { text-decoration: underline; }
 }
 
 .welcome {
@@ -205,7 +205,7 @@
             -webkit-transform: scale(1.05);
             -ms-transform: scale(1.05);
             transform: scale(1.05);
-            background-color : rgba($color: $nude, $alpha: .5); 
+            text-decoration: underline; 
         }
         li { padding: 5px; }
     }
