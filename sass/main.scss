@@ -1,16 +1,27 @@
 @import "_vars";
-@import "modules/_header";
-@import "modules/_development";
-@import "modules/_project";
-@import "modules/_about";
-@import "modules/_motion";
-@import "modules/_contact";
-@import "modules/_submission";
-@import "modules/_footer";
 
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+  
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+ol, ul {
+    list-style: none;
+}
 
 img, embed, object, video {
     max-width: 100%;
+    height: auto;
 }
 
 html, body {
@@ -26,8 +37,6 @@ body {
 
 h1, h2, h3, h4 {
     color: $purple;
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
 h1 {
@@ -44,23 +53,16 @@ p {
     color: $grey;
     line-height: 1.5em;
     font-size: 0.9em;
-    margin-top: 0;
-    margin-bottom: 0;
 }
 
 a {
     font-family: $font; 
-    margin: 0;
-    padding: 0;
     text-decoration: none;
     color: $grey;
     cursor: pointer;
 }
 
 ul, li {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     color: $grey;
     line-height: 1.5em;
     font-size: 0.9em;
@@ -152,3 +154,13 @@ ul, li {
         transform: rotate(-2deg); 
     }
 }
+
+@import "modules/_header";
+@import "modules/_development";
+@import "modules/_project";
+@import "modules/_about";
+@import "modules/_motion";
+@import "modules/_contact";
+@import "modules/_submission";
+@import "modules/_footer";
+
