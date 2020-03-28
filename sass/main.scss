@@ -72,6 +72,10 @@ ul, li {
     display: none;
 }
 
+.link {
+    cursor: pointer;
+}
+
 @media screen and (min-width:767px) {
     h1 { 
         font-size: 2em;

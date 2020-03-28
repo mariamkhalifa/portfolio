@@ -63,8 +63,8 @@
         @include m-r-a;
         @include m-l-a;
     }
-    a:last-child { border-bottom: none; }
-    a:hover, a:focus { text-decoration: underline; }
+    .link:last-child { border-bottom: none; }
+    .link:hover, .link:focus { text-decoration: underline; }
 }
 
 .welcome {
@@ -197,11 +197,11 @@
         top: 20px;
         right: 25px;
         z-index: 10;
-        a > li { 
+        li > .link { 
             color: $purple; 
             transition: all ease .5s;
         }
-        a > li:hover { 
+        li > .link:hover, .link:focus { 
             -webkit-transform: scale(1.05);
             -ms-transform: scale(1.05);
             transform: scale(1.05);

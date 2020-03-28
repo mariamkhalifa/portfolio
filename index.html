@@ -16,49 +16,58 @@
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 <title>Mariam Khalifa</title>
 </head>
-<body>
-<h1 class="hidden">Mariam Khalifa</h1>
-<header id="main-header">
-    <i class="fas fa-bars fa-2x"></i>
-    <ul class="main-nav">
-        <a id="link-about" href="#about"><li>About</li></a>
-        <a id="link-dev" href="#development"><li>Web Development</li></a>
-        <a id="link-motion" href="#motion"><li>Motion Design</li></a>
-        <a id="link-contact" href="#contact"><li>Contact</li></a>
-    </ul>
-    <a href="index.php" class="link-home">
-        <picture class="logo">
-            <source media="(min-width: 767px)" srcset="images/logo.svg">
-            <img  src="images/logo-alt.svg" alt="logo">
-        </picture>
-    </a>
-    <div class="welcome">
-        <h1>Hello,</h1>
-        <h2>I'm a front-end developer</h2>
-        <h2>This is my portfolio.</h2>
-    </div>
-    <ul class="dots">
-        <li class="dot">.</li>
-        <li class="dot">.</li>
-        <li class="dot">.</li>
-    </ul>
-    <i class="fas fa-chevron-down fa-2x"></i>
-</header>
 
-<div class="bottom">
-    <img class="butterflies" src="images/butterflies.png" alt="butterfly">
-    <i class="fas fa-chevron-up fa-3x"></i>
+<body>
+<div id="app">
+    <h1 class="hidden">Mariam Khalifa</h1>
+    <header id="main-header">
+        <i class="fas fa-bars fa-2x"></i>
+        <ul class="main-nav">
+            <li><router-link class="link" id="link-about" to="/">About</router-link></li>    
+            <li><router-link class="link" id="link-dev" to="/development">Web Development</router-link></li>
+            <li><router-link class="link" id="link-motion" to="/design">Motion Design</router-link></li>  
+            <li><router-link class="link" id="link-contact" to="/contact">Contact</router-link></li>
+        </ul>
+        <a href="index.php" class="link-home">
+            <picture class="logo">
+                <source media="(min-width: 767px)" srcset="images/logo.svg">
+                <img  src="images/logo-alt.svg" alt="logo">
+            </picture>
+        </a>
+        <div class="welcome">
+            <h1>Hello,</h1>
+            <h2>I'm a front-end developer</h2>
+            <h2>This is my portfolio.</h2>
+        </div>
+        <ul class="dots">
+            <li class="dot">.</li>
+            <li class="dot">.</li>
+            <li class="dot">.</li>
+        </ul>
+        <i class="fas fa-chevron-down fa-2x"></i>
+    </header>
+
+    <main>
+        <router-view></router-view>
+    </main>
+    
+
+    <div class="bottom">
+        <img class="butterflies" src="images/butterflies.png" alt="butterfly">
+        <i class="fas fa-chevron-up fa-3x"></i>
+    </div>
+
+    <footer id="footer">
+        <h1 class="hidden">Main Footer</h1>
+        <p>&copy; Mariam Khalifa 2019.</p>
+        <div class="social-media">
+            <a href="https://github.com/mariamkhalifa" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+            <a href="https://www.linkedin.com/in/mariamkhalifa/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
+            <a href="https://vimeo.com/mariamkhalifa" target="_blank"><i class="fab fa-vimeo fa-2x"></i></a>
+        </div>
+    </footer>
 </div>
 
-<footer id="footer">
-    <h1 class="hidden">Main Footer</h1>
-    <p>&copy; Mariam Khalifa 2019.</p>
-    <div class="social-media">
-        <a href="https://github.com/mariamkhalifa" target="_blank"><i class="fab fa-github fa-2x"></i></a>
-        <a href="https://www.linkedin.com/in/mariamkhalifa/" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>
-        <a href="https://vimeo.com/mariamkhalifa" target="_blank"><i class="fab fa-vimeo fa-2x"></i></a>
-    </div>
-</footer>
-
+<script src="js/main.js" type="module"></script>
 </body>
 </html>
