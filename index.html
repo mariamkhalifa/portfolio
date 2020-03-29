@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="icon" type="image/x-icon" href="images/favicon.ico">
-<link href="https://fonts.googleapis.com/css?family=Manjari:700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Merienda+One&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/main.css">
-<script src="https://kit.fontawesome.com/cfa5b23a00.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.4/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.2/ScrollToPlugin.min.js"></script>
-<script src="https://unpkg.com/vue"></script>
-  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-<title>Mariam Khalifa</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Manjari:700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merienda+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://kit.fontawesome.com/cfa5b23a00.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.2/ScrollToPlugin.min.js"></script>
+    <title>Mariam Khalifa</title>
 </head>
 
 <body>
@@ -23,15 +22,15 @@
     <header id="main-header">
         <i class="fas fa-bars fa-2x"></i>
         <ul class="main-nav">
-            <li><router-link class="link" id="link-about" to="/">About</router-link></li>    
-            <li><router-link class="link" id="link-dev" to="/development">Web Development</router-link></li>
-            <li><router-link class="link" id="link-motion" to="/design">Motion Design</router-link></li>  
-            <li><router-link class="link" id="link-contact" to="/contact">Contact</router-link></li>
+            <li><a class="link" id="link-about">About</a></li>    
+            <li><a class="link" id="link-dev">Web Development</a></li>
+            <li><a class="link" id="link-motion">Motion Design</a></li>  
+            <li><a class="link" id="link-contact">Contact</a></li>
         </ul>
         <a href="index.php" class="link-home">
             <picture class="logo">
                 <source media="(min-width: 767px)" srcset="images/logo.svg">
-                <img  src="images/logo-alt.svg" alt="logo">
+                <img src="images/logo-alt.svg" alt="logo">
             </picture>
         </a>
         <div class="welcome">
@@ -48,14 +47,45 @@
     </header>
 
     <main>
-        <router-view></router-view>
+        <section id="about">
+            <div class="about">
+                <h2 class="main-heading">A little bit about me..</h2>
+                <p class="about-text">
+                    <span>Hi there!</span><br>
+                    {{ about.text }}
+                </p>
+    
+                <img class="about-img" :src="'images/' + about.img" alt="mariam pic">
+            </div>
+            <div class="skills-con">
+                <div class="skills skills-m">
+                    <h3 class="skill-title">Motion Design Skills</h3>
+                    <ul class="ul-con">
+                        <li v-for="skill in motionskills"><i class="fas fa-square"></i>{{ skill.name }}</li>
+                    </ul>
+                </div>
+    
+                <div class="skills skills-dev">
+                    <h3 class="skill-title">Front-End Development Skills</h3>
+                    <ul class="ul-con">
+                        <li v-for="skill in devskills"><i class="fas fa-square"></i>{{ skill.name }}</li>
+                    </ul>
+                </div>
+    
+                <div class="skills skills-g">
+                    <h3 class="skill-title">Graphic Design Skills</h3>
+                    <ul class="ul-con">
+                        <li v-for="skill in graphicskills"><i class="fas fa-square"></i>{{ skill.name }}</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
     </main>
     
 
-    <div class="bottom">
-        
-        <!-- <i class="fas fa-chevron-up fa-3x"></i> -->
-    </div>
+    <!-- <div class="bottom">
+        <i class="fas fa-chevron-up fa-3x"></i>
+    </div> -->
 
     <footer id="footer">
         <img class="butterflies" src="images/butterflies.png" alt="butterfly">

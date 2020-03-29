@@ -6,7 +6,7 @@
     background-size: cover;
     position: relative;
     @include column;
-    animation: fade-anim 2.5s;
+    animation: fade-anim 2s;
 }
 
 .link-home {
@@ -14,13 +14,13 @@
     @include m-r-a;
     @include m-l-a;
     margin-top: 20px;
-    transition: all 1s ease;
+    transition: all .5s ease;
 }
 
-.link-home:hover {
-    -webkit-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    transform: scale(1.05);
+.link-home:hover, .link-home:focus {
+    -webkit-transform: scale(.97);
+    -ms-transform: scale(.97);
+    transform: scale(.97);
 }
 
 .logo {
@@ -33,13 +33,13 @@
     margin-top: 10px;
     @include m-l-a;
     cursor: pointer;
-    transition: all ease 1s;
+    transition: all ease .5s;
 }
 
 .fa-bars:hover, .fa-bars:focus {
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2);
+    -webkit-transform: scale(.95);
+    -ms-transform: scale(.95);
+    transform: scale(.95);
 }
 
 .rotated {
@@ -64,7 +64,12 @@
         @include m-l-a;
     }
     .link:last-child { border-bottom: none; }
-    .link:hover, .link:focus { text-decoration: underline; }
+    .link:hover, .link:focus { 
+        text-decoration: underline;
+        -webkit-transform: scale(.97);
+        -ms-transform: scale(.97);
+        transform: scale(.97);
+    }
 }
 
 .welcome {
@@ -202,9 +207,7 @@
             transition: all ease .5s;
         }
         li > .link:hover, .link:focus { 
-            -webkit-transform: scale(1.05);
-            -ms-transform: scale(1.05);
-            transform: scale(1.05);
+            font-size: .97em;
             text-decoration: underline; 
         }
         li { padding: 5px; }

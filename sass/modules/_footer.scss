@@ -12,6 +12,7 @@
 
 .social-media {
     @include row;
+    margin-top: 10px;
     a { 
         margin-right: 8px;
         color: $blue;
@@ -19,9 +20,9 @@
     }
     a:hover, a:focus {
         color: rgba($color: $nude, $alpha: .6);
-        -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-        transform: scale(1.1);
+        -webkit-transform: scale(.95);
+        -ms-transform: scale(.95);
+        transform: scale(.95);
     }
 }
 
