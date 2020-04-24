@@ -1,17 +1,30 @@
 #motion {
     opacity: 0;
     transition: all .5s ease;
-    @include m-t-80;
+    margin-top: 90px;
     @include column;
+    margin-right: 50px;
+    margin-left: 50px;
     align-items:  center;
+    //border-top: 2px $primary solid;
+    position: relative;
 }
 
-.demo-reel {
-    padding: 0 25px;
+.flower-bar {
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    border-radius: 3px;
+    background-color: $dark-grey;
+    top: -60px;
+    background: linear-gradient( #999, $dark-grey);
 }
 
-.motion-projects {
-    padding: 0 25px;
+.hanging-flowers {
+    position: absolute;
+    top: -70px;
+    right: 10px;
+    width: 70px;
 }
 
 .thumbnail {
@@ -19,13 +32,18 @@
     align-items: center;
     @include m-t-80;
     cursor: pointer;
-    transition: all 1s ease;
 }
 
-.thumbnail:hover {
-    -webkit-transform: scale(1.02);
-    -ms-transform: scale(1.02);
-    transform: scale(1.02);
+.thumb-img {
+    transition: all .5s ease;
+    border-radius: 8px;
+}
+
+.thumb-img:hover, .thumb-img:focus {
+    -webkit-transform: scale(.99);
+    -ms-transform: scale(.99);
+    transform: scale(.99);
+    opacity: .9;
 }
 
 .thumb-title {
@@ -94,6 +112,10 @@
     .motion-projects {
         display: grid;
         grid-template-columns: repeat(2,1fr);
-        grid-gap: 20px;
+        grid-gap: 40px;
+    }
+
+    .hanging-flowers {
+        width: 90px;
     }
 }
