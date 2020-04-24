@@ -1,26 +1,56 @@
-import AboutComponent from './components/AboutComponent.js'
-import DevelopmentComponent from './components/DevelopmentComponent.js'
-import DesignComponent from './components/DesignComponent.js'
-import ContactComponent from './components/ContactComponent.js'
-
-(() => {
-
-let router = new VueRouter({
-    routes: [
-        { path: '/', name: 'about', component: AboutComponent },
-        { path: '/development',  name: 'development', component: DevelopmentComponent },
-        { path: '/design',  name: 'design', component: DesignComponent },
-        { path: '/contact',  name: 'contact', component: ContactComponent },
-    ]
-});
+import router from './components/Router.js'
 
 const vm = new Vue({
-    date: {},
+    data: {
+        burger: false,
+    },
 
-    methods: {},
+    methods: {
+        expandBurger() {
+            this.burger = !(this.burger);
+        },
+        
+        scrollTop() {
+            gsap.to(window, 1, {scrollTo:{y:0}});
+        }
+    },
 
-    router: router
-}).$mount('#app'); 
+    router
+}).$mount('#app')
 
+let waypoint1 = new Waypoint({
+	element: document.getElementById('about'),
+	handler: function(direction) {
+        document.querySelector('#about').style.opacity = 1;
+        gsap.to('#about', {y: 10, duration: .2});
+    },
+    offset: 300
+});
 
-})();
+let waypoint2 = new Waypoint({
+	element: document.getElementById('development'),
+	handler: function(direction) {
+        console.log('here');
+        document.querySelector('#development').style.opacity = 1;
+        gsap.to('#development', {y: 10, duration: .2});
+    },
+    offset: 300
+});
+
+let waypoint3 = new Waypoint({
+	element: document.getElementById('motion'),
+	handler: function(direction) {
+        document.querySelector('#motion').style.opacity = 1;
+        gsap.to('#motion', {y: 10, duration: .2});
+    },
+    offset: 300
+});
+
+let waypoint4 = new Waypoint({
+	element: document.getElementById('contact'),
+	handler: function(direction) {
+        document.querySelector('#contact').style.opacity = 1;
+        gsap.to('#contact', {y: 10, duration: .2});
+    },
+    offset: 300
+});

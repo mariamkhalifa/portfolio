@@ -1,8 +1,8 @@
-$purple: #3E3A5B;
-$blue: #E6ECFA;
-$grey: #494050;
-$nude: #8e799c;
-$font: 'Manjari', sans-serif;
+$secondary: #337961;
+$primary: #56545c;
+$dark-grey: #353536;
+$grey: #d8d5e2;
+$font: 'Dosis', sans-serif;
 
 @mixin column {
     display: flex;
@@ -51,9 +51,9 @@ $font: 'Manjari', sans-serif;
 }
 
 @mixin rotate-90 {
-    transform:  rotate(90deg);
     -webkit-transform:  rotate(90deg);
     -ms-transform:  rotate(90deg);
+    transform:  rotate(90deg);
 }
 
 @mixin flip-vertical {

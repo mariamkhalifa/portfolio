@@ -1,20 +1,24 @@
+#about {
+    opacity: 0;
+    transition: all .5s ease;
+}
+
 .about {
-    //opacity: 0;
     @include column;
     align-items: center;
     @include m-r-25;
     @include m-l-25;
-    transition: all .5s ease;
 }
 
-.about-img {
-    max-width: 80%;
-    margin-top: 20px;
+.main-heading {
+    margin-left: 30px;
+    margin-right: 30px;
 }
+
 
 .about-text {
-    padding: 40px 20px 20px 20px;
-    max-width: 80%;
+    margin-top: 60px;
+    max-width: 50%;
     span {
         font-size: 1.25em;
         line-height: 1.5em;
@@ -22,16 +26,33 @@
 }
 
 .skills-con {
-    background-color: $blue;
+    background-color: $grey;
     @include m-t-80;
     padding: 80px 25px;
-    padding-bottom: 150px;
+    padding-top: 100px;
     @include column;
     align-items: center;
+    position: relative;
+}
+
+.vine-bar {
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    border-radius: 3px;
+    background-color: $dark-grey;
+    top: 36px;
+    background: linear-gradient( #999, $dark-grey);
+}
+
+.vine {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 180px;
 }
 
 .skills {
-    //width: 220px;
     @include m-l-a;
     @include m-r-a;
     @include column;
@@ -40,6 +61,7 @@
 
 .ul-con {
     margin-top: 10px;
+    list-style-image: url(../images/leaf.svg);
 }
 
 .skill-title {
@@ -47,45 +69,31 @@
     margin-bottom: 10px;
 }
 
-.fa-square {
-    font-size: .5em;
-    margin-right: 8px;
-    color: $grey;
-}
-
-.skills-dev {
+.skills:nth-of-type(3) {
     @include m-t-40;
 }
 
-.skills-g {
+.skills:last-of-type {
     @include m-t-40;
+}
+
+@media screen and (min-width: 450px) {
+    .skills:nth-of-type(3){
+        .ul-con {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 25px;
+        }
+    }
 }
 
 @media screen and (min-width: 767px) {
-    .about {
-        display: grid;
-        grid-template-areas: "h1 h1"
-                             "p img";
-        grid-gap: 40px;
-    }
-    .about h1 {
-        grid-area: h1;
-        text-align: center;
-    }
-    .about-text {
-        grid-area: p;
-        padding: 0;
-        margin-left: auto;
-    }
-    .about-img {
-        grid-area: img;
-        margin-right: auto;
-    }
     .skills-con {
         @include row;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: start;
-        padding-bottom: 100px
+        padding-left: 40px;
+        padding-right: 40px;
     }
     .skills {
         margin-right: 0;
@@ -96,14 +104,10 @@
         display: grid;
         li { margin-top: 10px; }
     }
-    .skills-dev { 
+    .skills:nth-of-type(3) { 
         margin-top: 0;
-        .ul-con { 
-            grid-template-columns: 1fr 1fr;
-            grid-column-gap: 25px;
-        }
     }
-    .skills-g { 
+    .skills:last-of-type { 
         margin-top: 0;
     }
     .skill-title {
@@ -113,23 +117,24 @@
 }
 
 @media screen and (min-width: 1100px) {
-    .about-text {
-        padding-right: 60px;
+    .main-heading {
+        margin-top: 100px; 
     }
+
     .skills-con  {
-        @include m-t-80;
+        margin-top: 100px;
         justify-content: space-evenly;
-        padding-bottom: 120px;
+        padding-bottom: 100px;
     }
     .skill-title { 
-        font-size: 1.5em;
-        padding-bottom: 5px;
-        border-bottom: $purple 2px solid;
+        //font-size: 1.5em;
+        padding-bottom: 10px;
+        border-bottom: $primary 1px solid;
     }
     .ul-con {
-        margin-top: 20px;
+        margin-top: 5px;
     }
-    .skills-dev {
+    .skills:nth-of-type(3) {
         .ul-con {
             grid-template-columns: repeat(3,1fr);
             grid-column-gap: 40px;
