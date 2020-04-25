@@ -39,6 +39,15 @@
         color: $primary;
         opacity: .8;
     }
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 30px $grey inset !important;
+    }
+    input:-webkit-autofill {
+        -webkit-text-fill-color: $dark-grey !important;
+    }
 }
 
 .submit-btn {
@@ -63,7 +72,7 @@
 }
 
 .form-msg {
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;

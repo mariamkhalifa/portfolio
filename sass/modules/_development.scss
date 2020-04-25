@@ -6,136 +6,124 @@
 .development {
     @include column;
     align-items: center;
-    margin: 0 30px;
-    padding: 30px;
-    transition: all ease .5s;
     position: relative;
     margin-bottom: 100px;
+    max-width: 100vw;
 }
 
 //.main-heading { max-width: 242px;}
 
 .dev-projects {
-    @include column;
-    align-items: center;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.dev-slide-left, .dev-slide-right {
+    position: absolute;
+    top: 53%;
+    font-size: 1.5em;
+    color: $dark-grey;
+    padding: 5px 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    @include transition;
+    background-color: rgba($color: $grey, $alpha: .7);
+}
+
+.dev-slide-left {
+    left: 8px;
+}
+
+.dev-slide-right {
+    right: 8px;
+}
+
+.dev-slide-left:hover, .dev-slide-right:hover,
+.dev-slide-left:focus, .dev-slide-right:focus {
+    @include scaleDown;
+}
+
+.slides {
+    @include row;
+    flex-wrap: no-wrap;
     margin-top: 60px;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 500vw;
+    overflow-x: hidden;
 }
 
 .project {
+    @include column;
+    width: 85vw;
+    margin-right: 10vw;
+}
+
+.project:last-of-type {
+    margin-right: 0;
+}
+
+.dev-images {
+    @include column;
+}
+
+.dev-desktop-img-con {
+    height: 60vw;
+    overflow-y: scroll;
+}
+
+.dev-desktop-img-con, 
+.dev-mobile-img {
+    @include transition; 
     cursor: pointer;
-    width: 50%;
-    max-width: 300px;
+} 
+
+.dev-desktop-img-con:hover, 
+.dev-desktop-img-con:focus,
+.dev-mobile-img:hover,
+.dev-mobile-img:focus {
+    @include scaleDown;
+} 
+
+.dev-mobile-images {
+    @include row;
+    margin-top: 30px;
+    justify-content: space-evenly;
+}
+
+.dev-mobile-img {
+   width: 30%;
+}
+
+.dev-text {
+    @include column;
+    margin-top: 30px;
+}
+
+.dev-title {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.dev-subtitle {
     margin-top: 20px;
-    position: relative;
-    margin-bottom: 40px;
-    transition: .5s all ease;
+    font-weight: bold;
+    font-size: 1.2em;
 }
 
-.project:hover, .project:focus {
-    -webkit-transform: scale(.99);
-    -ms-transform: scale(.99);
-    transform: scale(.99);
+.dev-desc {
+    margin-top: 10px;
 }
 
-.project-img {
-    width: 100%;
+.dev-link {
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 30px;
 }
 
-.red-fox {
-    order: 0;
+.dev-link:hover, .dev-link:focus {
+    @include scaleDown;
 }
 
-.animal-tracks {
-    width: 100%;
-    max-width: 500px;
-}
-
-.dev-popover-outer {
-    @include column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    transition: all .5s ease;
-    opacity: 0;
-}
-
-.dev-popover-inner {
-    @include column;
-    justify-content: center;
-    //padding: 20px;
-    width: 80%;
-    height: 80%;
-    background-color: rgba($color: $primary, $alpha: .9);
-    h3 { 
-        color: white;
-        font-size: 1.2em;
-        text-align: center;
-        margin-bottom: 20px;
-        line-height: 1.1em;
-        padding: 0 10px;
-    }
-    ul > li {
-        color: white;
-        font-size: 1em;
-        margin: auto;
-        text-align: center;
-    }
-}
-
-.dev-popover-outer:hover, .dev-popover-outer:focus {
-    animation: shrink-anim .5s backwards;
-    opacity: 1;
-}
-
-@media screen and (min-width:550px) {
-    // .main-heading { 
-    //     max-width: 300px 
-    // }
-    .dev-projects {
-        display: grid !important;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 20px;
-        align-items: center;
-    }
-    .project {
-        @include m-r-a;
-        @include m-l-a;
-        width: 60%;
-        max-width: 500px;
-        h3 {
-            font-size: 1.2em;
-        }
-        ul > li {
-            font-size: 1em;
-        }
-    }
-    .animal-tracks {
-        //max-width: 100%;
-        max-width: 600px;
-    }
-}
-
-@media screen and (min-width:1023px) {
-    .dev-projects {
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 40px;
-        margin-top: 80px;
-    }
-    .project {
-        width: 70%;
-        h3 {
-            font-size: 1.6em;
-        }
-        ul > li {
-            font-size: 1.3em;
-        }
-    }
-
-    .animal-tracks {
-        margin-top: 60px;
-    }
-    
-}

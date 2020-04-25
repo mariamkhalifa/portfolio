@@ -56,8 +56,12 @@ $font: 'Dosis', sans-serif;
     transform:  rotate(90deg);
 }
 
-@mixin flip-vertical {
-    -webkit-transform: scaleX(-1);
-    -moz-transform: scaleX(-1);
-    transform: scaleX(-1);
+@mixin scaleDown {
+    -webkit-transform: scale(.98);
+    -moz-transform: scale(.98);
+    transform: scale(.98);
+}
+
+@mixin transition {
+    transition: all .5s ease;
 }

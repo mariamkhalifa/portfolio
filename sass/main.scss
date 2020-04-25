@@ -48,6 +48,7 @@ a {
     text-decoration: none;
     color: $dark-grey;
     cursor: pointer;
+    @include transition;
 }
 
 ul, li {
