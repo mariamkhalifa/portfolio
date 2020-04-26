@@ -3,6 +3,12 @@ import router from './components/Router.js'
 const vm = new Vue({
     data: {
         burger: false,
+        logo: 'logo-symbol.svg',
+        welcome: {
+            p1: 'Mariam Khalifa',
+            p2: 'Front-End Developer',
+            p3: 'and Digital Artist'
+        }
     },
 
     methods: {
