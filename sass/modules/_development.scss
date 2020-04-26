@@ -7,13 +7,14 @@
     @include column;
     align-items: center;
     position: relative;
-    margin-bottom: 100px;
     max-width: 100vw;
 }
 
 //.main-heading { max-width: 242px;}
 
 .dev-projects {
+    @include column;
+    align-items: center;
     width: 100vw;
     overflow: hidden;
     position: relative;
@@ -21,14 +22,15 @@
 
 .dev-slide-left, .dev-slide-right {
     position: absolute;
-    top: 53%;
+    //top: 53%;
+    bottom: 80px;
     font-size: 1.5em;
     color: $dark-grey;
     padding: 5px 10px;
     border-radius: 20px;
     cursor: pointer;
     @include transition;
-    background-color: rgba($color: $grey, $alpha: .7);
+    background-color: $grey;
 }
 
 .dev-slide-left {
@@ -44,24 +46,18 @@
     @include scaleDown;
 }
 
-.slides {
-    @include row;
-    flex-wrap: no-wrap;
-    margin-top: 60px;
-    margin-left: 40px;
-    margin-right: 40px;
-    width: 500vw;
-    overflow-x: hidden;
-}
-
 .project {
     @include column;
-    width: 85vw;
-    margin-right: 10vw;
+    position: absolute;
+    top: -2000px;
 }
 
-.project:last-of-type {
-    margin-right: 0;
+.project.active {
+    position: static;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 60px;
+    margin-bottom: 80px;
 }
 
 .dev-images {
@@ -121,6 +117,9 @@
     text-align: center;
     text-decoration: underline;
     margin-top: 30px;
+    .url {
+        margin-top: 10px;
+    }
 }
 
 .dev-link:hover, .dev-link:focus {
